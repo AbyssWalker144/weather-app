@@ -1,4 +1,4 @@
-$main-text-color: #3a3a3a;
+$main-text-color: #333333;
 
 *{
     box-sizing: border-box;
@@ -11,29 +11,135 @@ $main-text-color: #3a3a3a;
     display: flex;
 }
 
-.today-info{
+.today{
     background-color: #d5b666;
     height: 100vh;
     width: 40%;
     padding: 30px;
+    color: $main-text-color;
 
 
-    .today{
-        font-size: 50px;
-        color: $main-text-color;
+    .text{
+        margin: -25px 0;
+        font-size: 80px;
+        font-weight: 400;
     }
-    img{
+    &__img{
         height: 25vh;
         position: relative;
-        margin-top: 50px;
+        margin-top: 60px;
         right: -50%;
         transform: translateX(-50%);
+    }
+
+    &__details{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 120px;
+        text-align: center;
+        font-size: 20px;
+
+        img{
+            height: 80px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__weather{
+        text-align: center;
+
+        .temp{
+            font-size: 180px;
+            font-weight: 700;
+
+            span{
+                font-weight: 400;
+            }
+        }
+
+        .condition{
+            margin-top: -60px;
+            font-size: 80px;
+        }
     }
 }
 
 .additional-info{
-    background-color: #faeac5;
+    background-color: #ffffff;
     height: 100vh;
     width: 60%;
+    padding: 30px;
+
+    .options{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        border-bottom: 2px solid #9f9f9f;
+
+        .swither{
+            display: flex;
+            align-items: center;
+            font-size: 40px;
+            gap: 10px;
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked + .slider {
+                background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+        }
+
+
+    }
+
+
+
 }
 
