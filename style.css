@@ -1,6 +1,8 @@
-div {
-  color: red;
-  font-size: 50px;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
