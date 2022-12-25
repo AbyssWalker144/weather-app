@@ -70,12 +70,15 @@ $main-text-color: #333333;
     height: 100vh;
     width: 60%;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
 
     .options{
+        margin: -25px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 0 10px 60px;
+        padding: 0 0 0 60px;
         border-bottom: 2px solid #9f9f9f;
 
         &:after{
@@ -93,8 +96,8 @@ $main-text-color: #333333;
         }
 
         .city{
-            font-size: 50px;
-            width: 400px;
+            font-size: 80px;
+            width: 100%;
             padding: 8px 16px;
             border: none;
             outline: none;
@@ -160,14 +163,43 @@ $main-text-color: #333333;
     }
 
     .chart{
-        height: 300px;
+        margin-top: 80px;
+        height: 350px;
         width: 100%;
-
-
-        .myChart{
-            display: block;
-        }
     }
 
+    .forecast{
+        flex-grow: 1;
+        margin-top: 30px;
+        display: flex;
+
+        .days{
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            //border: 1px solid gray;
+
+            .day{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            img{
+                height: 120px;
+            }
+
+            .card-temp{
+                margin-top: 20px;
+                font-size: 60px;
+            }
+
+            .card-condition{
+                font-size: 30px;
+            }
+        }
+    }
 }
 

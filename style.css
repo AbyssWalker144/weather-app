@@ -60,12 +60,15 @@
   height: 100vh;
   width: 60%;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .additional-info .options {
+  margin: -25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 10px 60px;
+  padding: 0 0 0 60px;
   border-bottom: 2px solid #9f9f9f;
 }
 .additional-info .options:after {
@@ -81,8 +84,8 @@
   margin: 3px 0 0 -60px;
 }
 .additional-info .options .city {
-  font-size: 50px;
-  width: 400px;
+  font-size: 80px;
+  width: 100%;
   padding: 8px 16px;
   border: none;
   outline: none;
@@ -138,11 +141,36 @@
   transform: translateX(26px);
 }
 .additional-info .chart {
-  height: 300px;
+  margin-top: 80px;
+  height: 350px;
   width: 100%;
 }
-.additional-info .chart .myChart {
-  display: block;
+.additional-info .forecast {
+  flex-grow: 1;
+  margin-top: 30px;
+  display: flex;
+}
+.additional-info .forecast .days {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.additional-info .forecast .days .day {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.additional-info .forecast .days img {
+  height: 120px;
+}
+.additional-info .forecast .days .card-temp {
+  margin-top: 20px;
+  font-size: 60px;
+}
+.additional-info .forecast .days .card-condition {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -14,8 +14,12 @@ new Chart(ctx, {
         maintainAspectRatio: false,
         plugins: {
             legend:{
-
+                display: false,
             }
+        },
+        elements: {
+            tension: 3,
+            borderWidth: 3,
         }
     },
 });
