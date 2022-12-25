@@ -65,8 +65,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  padding: 0 0 10px 60px;
   border-bottom: 2px solid #9f9f9f;
+}
+.additional-info .options:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("src/img/search.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  position: absolute;
+  margin: 3px 0 0 -60px;
+}
+.additional-info .options .city {
+  font-size: 50px;
+  width: 400px;
+  padding: 8px 16px;
+  border: none;
+  outline: none;
 }
 .additional-info .options .swither {
   display: flex;
@@ -92,7 +111,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #5140be;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }

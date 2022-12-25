@@ -75,8 +75,30 @@ $main-text-color: #333333;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 80px;
+        padding: 0 0 10px 60px;
         border-bottom: 2px solid #9f9f9f;
+
+        &:after{
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            //background-color: #5140be;
+            background-image: url("src/img/search.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            position: absolute;
+            margin: 3px 0 0 -60px;
+        }
+
+        .city{
+            font-size: 50px;
+            width: 400px;
+            padding: 8px 16px;
+            border: none;
+            outline: none;
+        }
 
         .swither{
             display: flex;
@@ -104,7 +126,7 @@ $main-text-color: #333333;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-color: #ccc;
+                background-color: #5140be;
                 -webkit-transition: .4s;
                 transition: .4s;
             }
@@ -135,11 +157,6 @@ $main-text-color: #333333;
                 transform: translateX(26px);
             }
         }
-
-
     }
-
-
-
 }
 
