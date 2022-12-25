@@ -158,5 +158,16 @@ $main-text-color: #333333;
             }
         }
     }
+
+    .chart{
+        height: 300px;
+        width: 100%;
+
+
+        .myChart{
+            display: block;
+        }
+    }
+
 }
 
