@@ -286,6 +286,7 @@
     margin-top: 16px;
     justify-content: start;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   .additional-info .forecast .days {
     width: 40%;
