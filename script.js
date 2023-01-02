@@ -7,6 +7,9 @@ const mainCondition = $('.condition');
 const wind = $('.wind').children('p');
 const pressure = $('.pressure').children('p');
 const humidity = $('.humidity').children('p');
+const forecast = $('.forecast');
+
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 (function getWeatherData () {
     console.log('hi');
@@ -21,15 +24,57 @@ const humidity = $('.humidity').children('p');
     .then(res2 => res2.json())
     .then(data2 => {
         console.log(data2);
-        temperature.text(Math.round(data2.list[0].main.temp));
-        
-        mainImg.attr('src', `https://openweathermap.org/img/wn/${data2.list[0].weather[0].icon}@4x.png`)
-        mainCondition.text(data2.list[0].weather[0].main.toUpperCase());
-        wind.text(`${data2.list[0].wind.speed} m/s`);
-        pressure.text(`${data2.list[0].main.pressure} hPa`);
-        humidity.text(`${data2.list[0].main.humidity} %`)
+        displayWeatherData(data2);
     });
 })();
 
+function displayWeatherData(data){
+
+    temperature.text(Math.round(data.list[0].main.temp));
+
+    mainImg.attr('src', `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`)
+    mainCondition.text(data.list[0].weather[0].main.toUpperCase());
+    wind.text(`${data.list[0].wind.speed} m/s`);
+    pressure.text(`${data.list[0].main.pressure} hPa`);
+    humidity.text(`${data.list[0].main.humidity} %`);
+    
+    forecast.html(`<div class="days">
+                    <p class="day">${window.moment(data.list[0].dt*1000).format('dddd')}</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
+                    <p class="card-temp">18°C</p>
+                    <p class="card-condition">RAINY</p>
+                </div>
+                <div class="days">
+                    <p class="day">Today</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[7].weather[0].icon}@4x.png">
+                    <p class="card-temp">18°C</p>
+                    <p class="card-condition">RAINY</p>
+                </div>
+                <div class="days">
+                    <p class="day">Today</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">
+                    <p class="card-temp">18°C</p>
+                    <p class="card-condition">RAINY</p>
+                </div>
+                <div class="days">
+                    <p class="day">Today</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[21].weather[0].icon}@4x.png">
+                    <p class="card-temp">18°C</p>
+                    <p class="card-condition">RAINY</p>
+                </div>
+    `)
+
+    
+}
+
+
+
+
+
+setInterval( () => {
+    const time = new Date();
+    const day = time.getDay();
+
+}, 10000)
 
 console.log(temperature)
