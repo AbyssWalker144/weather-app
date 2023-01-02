@@ -25,6 +25,7 @@ $main-text-color: #333333;
         font-weight: 400;
     }
     &__img{
+        object-fit: none;
         height: 25vh;
         position: relative;
         margin-top: 60px;
