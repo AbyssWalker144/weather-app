@@ -246,6 +246,8 @@ $main-text-color: #333333;
         &__weather{
             text-align: center;
             position: absolute;
+            width: 200px;
+            // border: 1px solid red;
             top: 9vh;
             right: 16px;
 
