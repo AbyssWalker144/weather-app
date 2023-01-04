@@ -11,7 +11,7 @@ const forecast = $('.forecast');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export const message = 1;
+export let message = 1;
 export let item1 = "asdfas";
 
 (function getWeatherData () {
@@ -28,6 +28,8 @@ export let item1 = "asdfas";
     .then(data2 => {
         console.log(data2);
         displayWeatherData(data2);
+
+        console.log(moment(data2.list[0].dt*1000).format('HH'));
     });
 })();
 
