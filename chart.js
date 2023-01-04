@@ -1,3 +1,5 @@
+import { message } from "./script";
+
 const ctx = document.getElementById('myChart');
 
 new Chart(ctx, {
@@ -23,3 +25,6 @@ new Chart(ctx, {
         }
     },
 });
+
+console.log('hello');
+// console.log(message);
