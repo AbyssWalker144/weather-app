@@ -1,4 +1,4 @@
-import { message } from "./script";
+import { message, item1 } from "./script.js";
 
 const ctx = document.getElementById('myChart');
 
@@ -27,4 +27,5 @@ new Chart(ctx, {
 });
 
 console.log('hello');
-// console.log(message);
+console.log(message);
+console.log(item1);

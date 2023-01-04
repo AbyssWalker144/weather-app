@@ -11,7 +11,8 @@ const forecast = $('.forecast');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export let message = [1, 2, 3];
+export const message = 1;
+export let item1 = "asdfas";
 
 (function getWeatherData () {
     console.log('hi');
