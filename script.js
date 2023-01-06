@@ -11,9 +11,6 @@ const forecast = $('.forecast');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export let message = 1;
-export let item1 = "asdfas";
-
 export let hoursTemperature = [];
 export let hoursTime = [];
 
@@ -67,32 +64,29 @@ function displayWeatherData(data){
                     <p class="card-condition">${data.list[0].weather[0].main}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[7].dt*1000).format('dddd')}</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[7].weather[0].icon}@4x.png">
-                    <p class="card-temp">${Math.round(data.list[7].main.temp)}</p>
-                    <p class="card-condition">${data.list[7].weather[0].main}</p>
+                    <p class="day">${window.moment(data.list[8].dt*1000).format('dddd')}</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@4x.png">
+                    <p class="card-temp">${Math.round(data.list[8].main.temp)}</p>
+                    <p class="card-condition">${data.list[8].weather[0].main}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[15].dt*1000).format('dddd')}</p>
+                    <p class="day">${window.moment(data.list[16].dt*1000).format('dddd')}</p>
                     <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">
-                    <p class="card-temp">${Math.round(data.list[15].main.temp)}</p>
-                    <p class="card-condition">${data.list[15].weather[0].main}</p>
+                    <p class="card-temp">${Math.round(data.list[16].main.temp)}</p>
+                    <p class="card-condition">${data.list[16].weather[0].main}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[23].dt*1000).format('dddd')}</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[23].weather[0].icon}@4x.png">
-                    <p class="card-temp">${Math.round(data.list[23].main.temp)}</p>
-                    <p class="card-condition">${data.list[23].weather[0].main}</p>
+                    <p class="day">${window.moment(data.list[24].dt*1000).format('dddd')}</p>
+                    <img src="https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@4x.png">
+                    <p class="card-temp">${Math.round(data.list[24].main.temp)}</p>
+                    <p class="card-condition">${data.list[24].weather[0].main}</p>
                 </div>
-    `)
-
-    
+    `)    
 }
 
 setInterval( () => {
     const time = new Date();
     const day = time.getDay();
-
 }, 10000)
 
 console.log(temperature);
