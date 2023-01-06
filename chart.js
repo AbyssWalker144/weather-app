@@ -1,15 +1,17 @@
 
-import { message, item1 } from "./script.js";
+import {hoursTemperature, hoursTime} from "./script.js";
 
 const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
+let tempChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['3:00','6:00' ,'9:00' ,'12:00' ,'15:00' ,'18:00', '21:00' ,'00:00' ],
+        labels: hoursTime,
         datasets: [{
             label: 'Hourly temperature',
-            data: ['0', '2', '5', '9', '10', '8' ,'5' ,'2'],
+            // data: hoursTemperature.length > 0 ? hoursTemperature : ['6','2' ,'3' ,'5' ,'11' ,'5', '2' ,'1'],
+            data: hoursTemperature,
+            // data: items,
             borderWidth: 1
         }]
     },
@@ -27,6 +29,8 @@ new Chart(ctx, {
     },
 });
 
-console.log('hello');
-console.log(message);
-console.log(item1);
+console.log(hoursTemperature);
+
+function getData(){tempChart.update()};
+
+setInterval( getData, 1000);

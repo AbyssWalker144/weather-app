@@ -14,6 +14,9 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 export let message = 1;
 export let item1 = "asdfas";
 
+export let hoursTemperature = [];
+export let hoursTime = [];
+
 (function getWeatherData () {
     console.log('hi');
 
@@ -29,7 +32,19 @@ export let item1 = "asdfas";
         console.log(data2);
         displayWeatherData(data2);
 
-        console.log(moment(data2.list[0].dt*1000).format('HH'));
+        for (let i=0; i<8 ; i++){
+            hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
+            hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
+        }
+
+        // hoursTemperature = data2.map( item => {
+        //     return Math.round(item.main.temp)
+        // })
+
+        console.log(hoursTemperature);
+        console.log(hoursTime);
+
+        console.log(moment(data2.list[0].dt*1000).format('HH:mm'));
     });
 })();
 
