@@ -8,24 +8,27 @@ let tempChart = new Chart(ctx, {
     data: {
         labels: hoursTime,
         datasets: [{
-            label: 'Hourly temperature',
+            label: 'Temperature',
             // data: hoursTemperature.length > 0 ? hoursTemperature : ['6','2' ,'3' ,'5' ,'11' ,'5', '2' ,'1'],
             data: hoursTemperature,
-            // data: items,
-            borderWidth: 1
+            pointRadius: 7,
+            pointHoverRadius: 10,
+            borderWidth: 3,
         }]
     },
-    options: {
+    options: {                
         maintainAspectRatio: false,
         plugins: {
             legend:{
                 display: false,
             }
         },
-        elements: {
-            tension: 3,
-            borderWidth: 3,
+        scales: {
+            y: {
+                
+            }
         }
+
     },
 });
 

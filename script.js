@@ -61,7 +61,7 @@ function displayWeatherData(data){
     console.log(moment().day())
     
     forecast.html(`<div class="days">
-                    <p class="day">Today</p>
+                    <p class="day">NOW</p>
                     <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
                     <p class="card-temp">${Math.round(data.list[0].main.temp)}</p>
                     <p class="card-condition">${data.list[0].weather[0].main}</p>
