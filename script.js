@@ -23,7 +23,7 @@ export let hoursTime = [];
         console.log(data);
     });
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=50.45&lon=30.52&appid=${API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=kyiv&appid=${API_KEY}&units=metric`)
     .then(res2 => res2.json())
     .then(data2 => {
         console.log(data2);
@@ -33,15 +33,9 @@ export let hoursTime = [];
             hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
             hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
         }
-
-        // hoursTemperature = data2.map( item => {
-        //     return Math.round(item.main.temp)
-        // })
-
+        
         console.log(hoursTemperature);
         console.log(hoursTime);
-
-        console.log(moment(data2.list[0].dt*1000).format('HH:mm'));
     });
 })();
 

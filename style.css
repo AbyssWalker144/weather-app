@@ -287,8 +287,8 @@
     flex-grow: 2;
     margin-top: 16px;
     justify-content: start;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
   .additional-info .forecast .days {
     width: 40%;
