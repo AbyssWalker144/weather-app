@@ -42,18 +42,17 @@ function getWeatherData () {
         console.log(data2);
         displayWeatherData(data2);
 
+        // hoursTemperature.forEach((item, index) => {
+        //     hoursTemperature[index] = `${Math.round(data2.list[index].main.temp)}`;
+        // });
         
         
 
         for (let i=0; i<8 ; i++){
-
-            // if(hoursTemperature.length !== 0 || hoursTime.length !== 0){
-            //     hoursTemperature = [];
-            //     hoursTime = [];
-            // }
-
-            hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
-            hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
+            // hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
+            hoursTemperature[i] = `${Math.round(data2.list[i].main.temp)}`;
+            hoursTime[i] = `${moment(data2.list[i].dt*1000).format('HH:mm')}`;
+            // hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
         }
         
 
