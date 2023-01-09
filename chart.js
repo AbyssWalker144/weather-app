@@ -3,6 +3,7 @@ import {hoursTemperature, hoursTime} from "./script.js";
 
 const ctx = document.getElementById('myChart');
 
+
 let tempChart = new Chart(ctx, {
     type: 'line',
     data: {

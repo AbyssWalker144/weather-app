@@ -8,11 +8,21 @@ const wind = $('.wind').children('p');
 const pressure = $('.pressure').children('p');
 const humidity = $('.humidity').children('p');
 const forecast = $('.forecast');
+const cityInput = $('.city');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export let hoursTemperature = [];
 export let hoursTime = [];
+
+cityInput.on('keypress', (e) => {
+
+    if(e.key === 'Enter'){
+        console.log(e.target.value);
+        alert(e.target.value);
+    }
+});
+
 
 (function getWeatherData () {
     console.log('hi');
