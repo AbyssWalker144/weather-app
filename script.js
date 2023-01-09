@@ -1,3 +1,5 @@
+// import { updateChartData } from "./chart.js";
+
 
 const API_KEY = '6e01dacfa1ae7c17d7d7ca01644c735a';
 
@@ -17,16 +19,16 @@ let hoursTime = [];
 
 let cityName = '';
 
-getWeatherData ();
+getWeatherData();
+// updateChartData();
 
 cityInput.on('keypress', (e) => {
 
     if(e.key === 'Enter'){
+        
         console.log(e.target.value);
         // alert(e.target.value);
         cityName = e.target.value;
-        hoursTemperature = [];
-        hoursTime = [];
         getWeatherData();
     }
 });
@@ -34,7 +36,7 @@ cityInput.on('keypress', (e) => {
 
 function getWeatherData () {
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName !== '' ? cityName : 'Kyiv'}&appid=${API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${ cityName !== '' ? cityName : 'Kyiv' }&appid=${ API_KEY }&units=metric`)
     .then(res2 => res2.json())
     .then(data2 => {
         console.log(data2);

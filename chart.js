@@ -1,5 +1,7 @@
 
-import {hoursTemperature, hoursTime} from "./script.js";
+// import {hoursTemperature, hoursTime} from "./script.js";
+
+let {hoursTemperature, hoursTime} = await import('./script.js');
 
 const ctx = document.getElementById('myChart');
 
@@ -37,12 +39,10 @@ let tempChart = new Chart(ctx, {
 
 console.log(hoursTemperature);
 
-function getData(){
-    
-    hoursTemperature
+export function updateChartData(){      
 
     tempChart.update(); 
     // console.log(hoursTemperature);
 };
 
-setInterval( getData, 1000);
+setInterval( updateChartData, 1000);
