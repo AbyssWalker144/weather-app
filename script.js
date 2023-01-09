@@ -12,42 +12,53 @@ const cityInput = $('.city');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export let hoursTemperature = [];
-export let hoursTime = [];
+let hoursTemperature = [];
+let hoursTime = [];
+
+let cityName = '';
+
+getWeatherData ();
 
 cityInput.on('keypress', (e) => {
 
     if(e.key === 'Enter'){
         console.log(e.target.value);
-        alert(e.target.value);
+        // alert(e.target.value);
+        cityName = e.target.value;
+        hoursTemperature = [];
+        hoursTime = [];
+        getWeatherData();
     }
 });
 
 
-(function getWeatherData () {
-    console.log('hi');
+function getWeatherData () {
 
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=${API_KEY}`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-    });
-
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=kyiv&appid=${API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName !== '' ? cityName : 'Kyiv'}&appid=${API_KEY}&units=metric`)
     .then(res2 => res2.json())
     .then(data2 => {
         console.log(data2);
         displayWeatherData(data2);
 
+        
+        
+
         for (let i=0; i<8 ; i++){
+
+            // if(hoursTemperature.length !== 0 || hoursTime.length !== 0){
+            //     hoursTemperature = [];
+            //     hoursTime = [];
+            // }
+
             hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
             hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
         }
         
+
         console.log(hoursTemperature);
         console.log(hoursTime);
     });
-})();
+};
 
 function displayWeatherData(data){
 
@@ -58,8 +69,6 @@ function displayWeatherData(data){
     wind.text(`${data.list[0].wind.speed} m/s`);
     pressure.text(`${data.list[0].main.pressure} hPa`);
     humidity.text(`${data.list[0].main.humidity} %`);
-
-    console.log(moment().day())
     
     forecast.html(`<div class="days">
                     <p class="day">NOW</p>
@@ -91,6 +100,7 @@ function displayWeatherData(data){
 setInterval( () => {
     const time = new Date();
     const day = time.getDay();
-}, 10000)
+}, 10000);
 
-console.log(temperature);
+export {hoursTemperature};
+export {hoursTime};
