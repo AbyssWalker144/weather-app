@@ -193,7 +193,7 @@
     position: relative;
   }
   .today .text {
-    margin-top: -16px;
+    margin-top: -10px;
     font-size: 40px;
     text-align: center;
   }
@@ -294,10 +294,10 @@
   .additional-info .forecast {
     margin-top: 16px;
     justify-content: start;
-    overflow-y: hidden;
     overflow-x: scroll;
     min-height: 200px;
     max-height: 350px;
+    padding-bottom: 10px;
   }
   .additional-info .forecast .days {
     width: 40%;
@@ -309,7 +309,6 @@
   }
   .additional-info .forecast .days .day {
     font-size: 20px;
-    margin-bottom: 4px;
   }
   .additional-info .forecast .days .img-container {
     width: 80px;
@@ -325,7 +324,6 @@
   }
   .additional-info .forecast .days .card-condition {
     font-size: 20px;
-    margin-bottom: 10px;
   }
 }
 

@@ -11,16 +11,43 @@ const pressure = $('.pressure').children('p');
 const humidity = $('.humidity').children('p');
 const forecast = $('.forecast');
 const cityInput = $('.city');
+const units = $('.units');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+
 
 let hoursTemperature = [];
 let hoursTime = [];
 
 let cityName = '';
+let temperatureMultuplier = 1;
+
+let dataTemp = [];
+let dataPress = [];
+let dataHum = [];
+let dataWind = [];
+let dataImg = [];
 
 getWeatherData();
 // updateChartData();
+
+units.click((e) => {
+    console.log(e.target.checked);
+    // e.target.checked ? dataTemp.map( item => item = Math.round(item* 1.8 + 32)) : dataTemp.map( item => item = Math.round( (item - 32)/1.8) );
+
+    if(e.target.checked) {
+        dataTemp.map( (item, index) => {
+            dataTemp[index] = Math.round(item* 1.8 + 32);
+        });
+    } else{
+        dataTemp.map( (item, index) => {
+            dataTemp[index] = Math.round((item - 32)/1.8);
+        });
+    }
+    console.log(dataTemp);
+    displayWeatherData;
+});
 
 cityInput.on('keypress', (e) => {
 
@@ -40,30 +67,37 @@ function getWeatherData () {
     .then(res2 => res2.json())
     .then(data2 => {
         console.log(data2);
-        displayWeatherData(data2);
 
-        // hoursTemperature.forEach((item, index) => {
-        //     hoursTemperature[index] = `${Math.round(data2.list[index].main.temp)}`;
-        // });
-        
-        
+        const obj = data2.list;
 
-        for (let i=0; i<8 ; i++){
-            // hoursTemperature.push(`${Math.round(data2.list[i].main.temp)}`);
-            hoursTemperature[i] = `${Math.round(data2.list[i].main.temp)}`;
-            hoursTime[i] = `${moment(data2.list[i].dt*1000).format('HH:mm')}`;
-            // hoursTime.push(`${moment(data2.list[i].dt*1000).format('HH:mm')}`);
+        for (const item of obj){
+            dataTemp.push(Math.round(item.main.temp));
+            dataPress.push(item.main.pressure);
+            dataHum.push(item.main.humidity);
+            dataWind.push(item.wind.speed);
+            dataImg.push(item.weather[0].icon);
         }
-        
+
+        // for (let i=0; i<8 ; i++){
+        //     hoursTemperature[i] = `${dataTemp[i]}`;
+        //     hoursTime[i] = `${moment(data2.list[i].dt*1000).format('HH:mm')}`;
+        // }
 
         console.log(hoursTemperature);
         console.log(hoursTime);
+
+        displayWeatherData(data2);
     });
 };
 
 function displayWeatherData(data){
 
-    temperature.text(Math.round(data.list[0].main.temp));
+    for (let i=0; i<8 ; i++){
+        hoursTemperature[i] = `${dataTemp[i]}`;
+        hoursTime[i] = `${moment(data.list[i].dt*1000).format('HH:mm')}`;
+    }
+
+    temperature.text(dataTemp[0]);
 
     mainImg.attr('src', `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`)
     mainCondition.text(data.list[0].weather[0].main.toUpperCase());
@@ -76,7 +110,7 @@ function displayWeatherData(data){
                     <div class="img-container">
                         <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
                     </div>
-                    <p class="card-temp">${Math.round(data.list[0].main.temp)}</p>
+                    <p class="card-temp">${dataTemp[0]}</p>
                     <p class="card-condition">${data.list[0].weather[0].main}</p>
                 </div>
                 <div class="days">
@@ -84,7 +118,7 @@ function displayWeatherData(data){
                     <div class="img-container">
                         <img src="https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@4x.png">
                     </div>
-                    <p class="card-temp">${Math.round(data.list[8].main.temp)}</p>
+                    <p class="card-temp">${dataTemp[8]}</p>
                     <p class="card-condition">${data.list[8].weather[0].main}</p>
                 </div>
                 <div class="days">
@@ -92,7 +126,7 @@ function displayWeatherData(data){
                     <div class="img-container">
                         <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">  
                     </div>
-                    <p class="card-temp">${Math.round(data.list[16].main.temp)}</p>
+                    <p class="card-temp">${dataTemp[16]}</p>
                     <p class="card-condition">${data.list[16].weather[0].main}</p>
                 </div>
                 <div class="days">
@@ -100,7 +134,7 @@ function displayWeatherData(data){
                     <div class="img-container">
                         <img src="https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@4x.png">
                     </div>
-                    <p class="card-temp">${Math.round(data.list[24].main.temp)}</p>
+                    <p class="card-temp">${dataTemp[24]}</p>
                     <p class="card-condition">${data.list[24].weather[0].main}</p>
                 </div>
     `)    

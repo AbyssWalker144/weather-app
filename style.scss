@@ -224,7 +224,7 @@ $main-text-color: #333333;
         position: relative;
 
         .text{
-            margin-top: -16px;
+            margin-top: -10px;
             font-size: 40px;
             text-align: center;
         }
@@ -273,7 +273,6 @@ $main-text-color: #333333;
                 font-size: 36px;
             }
         }
-
     }
 
     .additional-info{
@@ -345,10 +344,10 @@ $main-text-color: #333333;
         .forecast{
             margin-top: 16px;
             justify-content: start;
-            overflow-y: hidden;
             overflow-x: scroll;
             min-height: 200px;
             max-height: 350px;
+            padding-bottom: 10px;
 
             .days{
                 width: 40%;
@@ -360,7 +359,6 @@ $main-text-color: #333333;
 
                 .day{
                     font-size: 20px;
-                    margin-bottom: 4px;
                 }
 
                 .img-container{
@@ -380,7 +378,6 @@ $main-text-color: #333333;
 
                 .card-condition{
                     font-size: 20px;
-                    margin-bottom: 10px;
                 }
             }
         }
