@@ -24,17 +24,18 @@ let cityName = '';
 let temperatureMultuplier = 1;
 
 let dataTemp = [];
+let dataTime = [];
 let dataPress = [];
 let dataHum = [];
 let dataWind = [];
 let dataImg = [];
+let dataCond = [];
+let dataDay = [];
 
 getWeatherData();
 // updateChartData();
 
 units.click((e) => {
-    console.log(e.target.checked);
-    // e.target.checked ? dataTemp.map( item => item = Math.round(item* 1.8 + 32)) : dataTemp.map( item => item = Math.round( (item - 32)/1.8) );
 
     if(e.target.checked) {
         dataTemp.map( (item, index) => {
@@ -45,8 +46,8 @@ units.click((e) => {
             dataTemp[index] = Math.round((item - 32)/1.8);
         });
     }
-    console.log(dataTemp);
-    displayWeatherData;
+    // console.log(dataTemp);
+    displayWeatherData();
 });
 
 cityInput.on('keypress', (e) => {
@@ -76,6 +77,9 @@ function getWeatherData () {
             dataHum.push(item.main.humidity);
             dataWind.push(item.wind.speed);
             dataImg.push(item.weather[0].icon);
+            dataCond.push(item.weather[0].main.toUpperCase());
+            dataDay.push(window.moment(item.dt*1000).format('dddd'));
+            dataTime.push(item.dt);
         }
 
         // for (let i=0; i<8 ; i++){
@@ -94,48 +98,48 @@ function displayWeatherData(data){
 
     for (let i=0; i<8 ; i++){
         hoursTemperature[i] = `${dataTemp[i]}`;
-        hoursTime[i] = `${moment(data.list[i].dt*1000).format('HH:mm')}`;
+        hoursTime[i] = `${moment(dataTime[i]*1000).format('HH:mm')}`;
     }
 
     temperature.text(dataTemp[0]);
 
-    mainImg.attr('src', `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`)
-    mainCondition.text(data.list[0].weather[0].main.toUpperCase());
-    wind.text(`${data.list[0].wind.speed} m/s`);
-    pressure.text(`${data.list[0].main.pressure} hPa`);
-    humidity.text(`${data.list[0].main.humidity} %`);
+    mainImg.attr('src', `https://openweathermap.org/img/wn/${dataImg[0]}@4x.png`)
+    mainCondition.text(dataCond[0]);
+    wind.text(`${dataWind[0]} m/s`);
+    pressure.text(`${dataPress[0]} hPa`);
+    humidity.text(`${dataHum[0]} %`);
     
     forecast.html(`<div class="days">
                     <p class="day">NOW</p>
                     <div class="img-container">
-                        <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
+                        <img src="https://openweathermap.org/img/wn/${dataImg[0]}@4x.png">
                     </div>
                     <p class="card-temp">${dataTemp[0]}</p>
-                    <p class="card-condition">${data.list[0].weather[0].main}</p>
+                    <p class="card-condition">${dataCond[0]}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[8].dt*1000).format('dddd')}</p>
+                    <p class="day">${dataDay[8]}</p>
                     <div class="img-container">
-                        <img src="https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@4x.png">
+                        <img src="https://openweathermap.org/img/wn/${dataImg[8]}@4x.png">
                     </div>
                     <p class="card-temp">${dataTemp[8]}</p>
-                    <p class="card-condition">${data.list[8].weather[0].main}</p>
+                    <p class="card-condition">${dataCond[8]}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[16].dt*1000).format('dddd')}</p>
+                    <p class="day">${dataDay[16]}</p>
                     <div class="img-container">
-                        <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">  
+                        <img src="https://openweathermap.org/img/wn/${dataImg[16]}@4x.png">  
                     </div>
                     <p class="card-temp">${dataTemp[16]}</p>
-                    <p class="card-condition">${data.list[16].weather[0].main}</p>
+                    <p class="card-condition">${dataCond[16]}</p>
                 </div>
                 <div class="days">
-                    <p class="day">${window.moment(data.list[24].dt*1000).format('dddd')}</p>
+                    <p class="day">${dataDay[24]}</p>
                     <div class="img-container">
-                        <img src="https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@4x.png">
+                        <img src="https://openweathermap.org/img/wn/${dataImg[24]}@4x.png">
                     </div>
                     <p class="card-temp">${dataTemp[24]}</p>
-                    <p class="card-condition">${data.list[24].weather[0].main}</p>
+                    <p class="card-condition">${dataCond[24]}</p>
                 </div>
     `)    
 }
