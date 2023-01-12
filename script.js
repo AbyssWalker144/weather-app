@@ -111,5 +111,6 @@ setInterval( () => {
     const day = time.getDay();
 }, 10000);
 
+
 export {hoursTemperature};
 export {hoursTime};

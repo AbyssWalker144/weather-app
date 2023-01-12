@@ -7,7 +7,6 @@ const ctx = document.getElementById('myChart');
 
 console.log(hoursTemperature);
 
-
 let tempChart = new Chart(ctx, {
     type: 'line',
     data: {
