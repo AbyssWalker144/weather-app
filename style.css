@@ -163,8 +163,16 @@
   font-size: 30px;
   margin-bottom: 10px;
 }
-.additional-info .forecast .days img {
+.additional-info .forecast .days .img-container {
   height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.additional-info .forecast .days .img-container img {
+  position: absolute;
+  height: 100%;
 }
 .additional-info .forecast .days .card-temp {
   margin-top: 20px;
@@ -280,19 +288,19 @@
   }
   .additional-info .chart {
     margin-top: 50px;
-    max-height: 150px;
     width: 100%;
+    min-height: 200px;
   }
   .additional-info .forecast {
-    flex-grow: 2;
     margin-top: 16px;
     justify-content: start;
     overflow-y: hidden;
     overflow-x: scroll;
+    min-height: 200px;
+    max-height: 350px;
   }
   .additional-info .forecast .days {
     width: 40%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,8 +311,13 @@
     font-size: 20px;
     margin-bottom: 4px;
   }
-  .additional-info .forecast .days img {
-    height: 90px;
+  .additional-info .forecast .days .img-container {
+    width: 80px;
+    height: 80px;
+    gap: 0;
+  }
+  .additional-info .forecast .days .img-container img {
+    height: 160%;
   }
   .additional-info .forecast .days .card-temp {
     margin-top: 4px;
@@ -312,6 +325,7 @@
   }
   .additional-info .forecast .days .card-condition {
     font-size: 20px;
+    margin-bottom: 10px;
   }
 }
 

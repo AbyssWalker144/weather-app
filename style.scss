@@ -87,7 +87,6 @@ $main-text-color: #333333;
             display: block;
             width: 50px;
             height: 50px;
-            //background-color: #5140be;
             background-image: url("src/img/search.png");
             background-position: center;
             background-repeat: no-repeat;
@@ -181,15 +180,23 @@ $main-text-color: #333333;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            //border: 1px solid gray;
 
             .day{
                 font-size: 30px;
                 margin-bottom: 10px;
             }
 
-            img{
+            .img-container{
                 height: 120px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                img{
+                    position: absolute;
+                    height: 100%;
+                }
             }
 
             .card-temp{
@@ -331,20 +338,20 @@ $main-text-color: #333333;
 
         .chart{
             margin-top: 50px;
-            max-height: 150px;
             width: 100%;
+            min-height: 200px;
         }
 
         .forecast{
-            flex-grow: 2;
             margin-top: 16px;
             justify-content: start;
             overflow-y: hidden;
             overflow-x: scroll;
+            min-height: 200px;
+            max-height: 350px;
 
             .days{
                 width: 40%;
-                height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -356,8 +363,14 @@ $main-text-color: #333333;
                     margin-bottom: 4px;
                 }
 
-                img{
-                    height: 90px;
+                .img-container{
+                    width: 80px;
+                    height: 80px;
+                    gap: 0;
+
+                    img{
+                        height: 160%;
+                    }
                 }
 
                 .card-temp{
@@ -367,6 +380,7 @@ $main-text-color: #333333;
 
                 .card-condition{
                     font-size: 20px;
+                    margin-bottom: 10px;
                 }
             }
         }

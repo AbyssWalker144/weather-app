@@ -73,25 +73,33 @@ function displayWeatherData(data){
     
     forecast.html(`<div class="days">
                     <p class="day">NOW</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
+                    <div class="img-container">
+                        <img src="https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png">
+                    </div>
                     <p class="card-temp">${Math.round(data.list[0].main.temp)}</p>
                     <p class="card-condition">${data.list[0].weather[0].main}</p>
                 </div>
                 <div class="days">
                     <p class="day">${window.moment(data.list[8].dt*1000).format('dddd')}</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@4x.png">
+                    <div class="img-container">
+                        <img src="https://openweathermap.org/img/wn/${data.list[8].weather[0].icon}@4x.png">
+                    </div>
                     <p class="card-temp">${Math.round(data.list[8].main.temp)}</p>
                     <p class="card-condition">${data.list[8].weather[0].main}</p>
                 </div>
                 <div class="days">
                     <p class="day">${window.moment(data.list[16].dt*1000).format('dddd')}</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">
+                    <div class="img-container">
+                        <img src="https://openweathermap.org/img/wn/${data.list[14].weather[0].icon}@4x.png">  
+                    </div>
                     <p class="card-temp">${Math.round(data.list[16].main.temp)}</p>
                     <p class="card-condition">${data.list[16].weather[0].main}</p>
                 </div>
                 <div class="days">
                     <p class="day">${window.moment(data.list[24].dt*1000).format('dddd')}</p>
-                    <img src="https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@4x.png">
+                    <div class="img-container">
+                        <img src="https://openweathermap.org/img/wn/${data.list[24].weather[0].icon}@4x.png">
+                    </div>
                     <p class="card-temp">${Math.round(data.list[24].main.temp)}</p>
                     <p class="card-condition">${data.list[24].weather[0].main}</p>
                 </div>
