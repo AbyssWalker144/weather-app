@@ -51,16 +51,28 @@ units.click((e) => {
 });
 
 cityInput.on('keypress', (e) => {
-
+    console.log(cityName);
     if(e.key === 'Enter'){
         
         console.log(e.target.value);
         // alert(e.target.value);
         cityName = e.target.value;
+        cleartData();
         getWeatherData();
     }
+    console.log(cityName);
 });
 
+function cleartData(){
+    dataTemp = [];
+    dataTime = [];
+    dataPress = [];
+    dataHum = [];
+    dataWind = [];
+    dataImg = [];
+    dataCond = [];
+    dataDay = [];
+}
 
 function getWeatherData () {
 
@@ -90,11 +102,11 @@ function getWeatherData () {
         console.log(hoursTemperature);
         console.log(hoursTime);
 
-        displayWeatherData(data2);
+        displayWeatherData();
     });
 };
 
-function displayWeatherData(data){
+function displayWeatherData(){
 
     for (let i=0; i<8 ; i++){
         hoursTemperature[i] = `${dataTemp[i]}`;
