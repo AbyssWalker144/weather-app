@@ -4,7 +4,7 @@
 const API_KEY = '6e01dacfa1ae7c17d7d7ca01644c735a';
 
 const temperature = $('.temp');
-const mainImg = $('.today__img');
+const mainImg = $('.today__img').children('img');;
 const mainCondition = $('.condition');
 const wind = $('.wind').children('p');
 const pressure = $('.pressure').children('p');

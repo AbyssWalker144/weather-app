@@ -17,6 +17,10 @@ $main-text-color: #333333;
     width: 40%;
     padding: 30px;
     color: $main-text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
 
     .text{
@@ -26,18 +30,23 @@ $main-text-color: #333333;
     }
     &__img{
         object-fit: none;
-        height: 25vh;
-        position: relative;
+        height: 20vh;
+        width: 30vh;
         margin-top: 60px;
-        right: -50%;
-        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img{
+            height: 200%;
+        }
     }
 
     &__details{
         margin-top: 60px;
         display: flex;
         justify-content: center;
-        gap: 120px;
+        gap: 7vw;
         text-align: center;
         font-size: 20px;
 
@@ -49,6 +58,8 @@ $main-text-color: #333333;
 
     &__weather{
         text-align: center;
+        position: relative;
+        bottom: 0px;
 
         .temp{
             font-size: 180px;
@@ -101,6 +112,7 @@ $main-text-color: #333333;
             padding: 8px 16px;
             border: none;
             outline: none;
+            background: transparent;
         }
 
         .swither{
