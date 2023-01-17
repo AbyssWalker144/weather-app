@@ -178,10 +178,10 @@ $main-text-color: #333333;
         margin-top: 80px;
         height: 350px;
         width: 100%;
+        flex-grow: 1;
     }
 
     .forecast{
-        flex-grow: 1;
         margin-top: 30px;
         display: flex;
 
@@ -242,11 +242,10 @@ $main-text-color: #333333;
         }
 
         &__img{
-            height: 17vh;
+            height: 15vh;
             position: relative;
             margin-top: 40px;
-            right: 0;
-            transform: translateX(0%);
+            transform: translateX(-35%);
         }
         &__details{
             margin-top: 20px;
@@ -267,9 +266,8 @@ $main-text-color: #333333;
             text-align: center;
             position: absolute;
             width: 200px;
-            // border: 1px solid red;
-            top: 9vh;
-            right: 16px;
+            top: 10vh;
+            margin-left: 200px;
 
             .temp{
                 font-size: 80px;
