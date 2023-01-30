@@ -81,7 +81,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0 0 60px;
-  border-bottom: 2px solid #9f9f9f;
+  border-bottom: 2px solid white;
 }
 .additional-info .options:after {
   content: "";
@@ -335,6 +335,144 @@
   }
   .additional-info .forecast .days .card-condition {
     font-size: 20px;
+  }
+}
+@media (min-width: 731px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .today {
+    padding: 80px 16px 16px 16px;
+    width: 100%;
+    height: 25vh;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  .today .text {
+    position: absolute;
+    margin-top: -280px;
+    font-size: 60px;
+    text-align: center;
+  }
+  .today__img {
+    margin: 0 0 0 -50px;
+    height: 150px;
+    width: 150px;
+    order: 1;
+  }
+  .today__details {
+    margin-top: 20px;
+    gap: 50px;
+    font-size: 18px;
+    order: 3;
+  }
+  .today__details p {
+    margin-top: -8px;
+  }
+  .today__details img {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .today__weather {
+    text-align: center;
+    width: 200px;
+    margin-left: -120px;
+    order: 2;
+  }
+  .today__weather .temp {
+    font-size: 80px;
+    font-weight: 700;
+  }
+  .today__weather .temp span {
+    font-weight: 400;
+  }
+  .today__weather .condition {
+    margin-top: -30px;
+    font-size: 36px;
+  }
+  .additional-info {
+    width: 100%;
+    height: 75vh;
+    padding: 16px;
+  }
+  .additional-info .options {
+    margin: -25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #9f9f9f;
+    width: 100%;
+    padding: 4px 0 0 0;
+  }
+  .additional-info .options:after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-image: url("src/img/search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    position: absolute;
+    margin-left: 0px;
+  }
+  .additional-info .options .city {
+    font-size: 50px;
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    margin-top: 6px;
+    margin-left: 50px;
+  }
+  .additional-info .options .swither {
+    font-size: 26px;
+    margin-top: 6px;
+  }
+  .additional-info .options .swither .switch {
+    width: 50px;
+    height: 30px;
+  }
+  .additional-info .options .swither .slider:before {
+    height: 22px;
+    width: 22px;
+  }
+  .additional-info .options .swither input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  .additional-info .chart {
+    margin-top: 50px;
+    width: 100%;
+    min-height: 200px;
+  }
+  .additional-info .forecast {
+    margin-top: 16px;
+    justify-content: start;
+    min-height: 300px;
+    padding-bottom: 10px;
+  }
+  .additional-info .forecast .days {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .additional-info .forecast .days .day {
+    font-size: 26px;
+  }
+  .additional-info .forecast .days .img-container {
+    width: 80px;
+    height: 80px;
+    gap: 0;
+  }
+  .additional-info .forecast .days .img-container img {
+    height: 160%;
   }
 }
 

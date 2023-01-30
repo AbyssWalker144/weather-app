@@ -36,7 +36,7 @@ getWeatherData();
 // updateChartData();
 
 units.click((e) => {
-
+    console.log(e.target.checked);
     if(e.target.checked) {
         dataTemp.map( (item, index) => {
             dataTemp[index] = Math.round(item* 1.8 + 32);
@@ -52,10 +52,12 @@ units.click((e) => {
 
 cityInput.on('keypress', (e) => {
     console.log(cityName);
+    units.checked = false;
+    console.log(units.checked);
+
     if(e.key === 'Enter'){
         
         console.log(e.target.value);
-        // alert(e.target.value);
         cityName = e.target.value;
         cleartData();
         getWeatherData();
