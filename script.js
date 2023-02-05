@@ -50,20 +50,29 @@ units.click((e) => {
     displayWeatherData();
 });
 
-cityInput.on('keypress', (e) => {
-    console.log(cityName);
-    units.checked = false;
-    console.log(units.checked);
+cityInput
+    .on('keypress', (e) => {
+        console.log(cityName);
+        units.checked = false;
+        console.log(units.checked);
 
-    if(e.key === 'Enter'){
-        
-        console.log(e.target.value);
-        cityName = e.target.value;
-        cleartData();
-        getWeatherData();
-    }
-    console.log(cityName);
-});
+        if(e.key === 'Enter'){
+            console.log(e.target.value);
+            cityName = e.target.value;
+            cleartData();
+            getWeatherData();
+        }
+        console.log(cityName);
+    })
+    .on('click', (e) => {
+        console.log('hi');
+        if (e.offsetX > cityInput.offsetWidth) {
+            console.log(e.target.value);
+            cityName = e.target.value;
+            cleartData();
+            getWeatherData();
+        }
+    });
 
 function cleartData(){
     dataTemp = [];
