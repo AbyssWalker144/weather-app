@@ -7,7 +7,7 @@
     .today{
         padding: 80px 16px 16px 16px;
         width: 100%;
-        height: 25vh;
+        height: 30vh;
         position: relative;
         flex-direction: row;
         justify-content: space-around;
@@ -15,7 +15,7 @@
 
         .text{
             position: absolute;
-            margin-top: -280px;
+            margin-top: -320px;
             font-size: 60px;
             text-align: center;
         }
@@ -23,8 +23,12 @@
         &__img{
             margin: 0 0 0 -50px;
             height: 150px;
-            width: 150px;
+            width: 200px;
             order: 1;
+            // border: 1px solid red;
+            img{
+                height: 150%;
+            }
         }
         &__details{
             margin-top: 20px;
@@ -66,7 +70,7 @@
 
     .additional-info{
         width: 100%;
-        height: 75vh;
+        height: 70vh;
         padding: 16px;
 
         .options{
