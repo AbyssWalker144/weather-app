@@ -255,17 +255,10 @@
     width: 100%;
     padding: 4px 0 0 0;
   }
-  .additional-info .options:after {
-    content: "";
-    display: block;
+  .additional-info .options .search-icon {
     width: 30px;
     height: 30px;
-    background-image: url("src/img/search.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    position: absolute;
-    margin-left: 0px;
+    margin: 3px 0 0 0;
   }
   .additional-info .options .city {
     font-size: 30px;
@@ -403,17 +396,10 @@
     width: 100%;
     padding: 4px 0 0 0;
   }
-  .additional-info .options:after {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 44px;
-    background-image: url("src/img/search.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    position: absolute;
-    margin-left: 0px;
+  .additional-info .options .search-icon {
+    width: 45px;
+    height: 45px;
+    margin: 3px 0 0 0;
   }
   .additional-info .options .city {
     font-size: 50px;

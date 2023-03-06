@@ -82,18 +82,10 @@
             width: 100%;
             padding: 4px 0 0 0;
 
-            &:after{
-                content: "";
-                display: block;
-                width: 44px;
-                height: 44px;
-                //background-color: #5140be;
-                background-image: url("src/img/search.png");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 80%;
-                position: absolute;
-                margin-left: 0px;
+            .search-icon{
+                width: 45px;
+                height: 45px;
+                margin: 3px 0 0 0;
             }
 
             .city{
