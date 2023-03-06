@@ -54,6 +54,7 @@ units.click((e) => {
 cityInput
     .on('keypress', (e) => {
         if(cityName === cityInput.val()){
+            alert("You're trying to search for weather at the same location");
             return
         };
         console.log(cityName);
@@ -80,6 +81,7 @@ cityInput
 
 searchIcon.click( () => {
     if(cityName === cityInput.val()){
+        alert("You're trying to search for weather at the same location");
         return
     };
     cityName = cityInput.val();
@@ -125,6 +127,9 @@ function getWeatherData () {
         console.log(hoursTime);
 
         displayWeatherData();
+    })
+    .catch((e) => {
+        alert(`The place you've searching for doesn't exist`);
     });
 };
 
