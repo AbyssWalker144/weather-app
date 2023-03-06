@@ -129,7 +129,7 @@ function getWeatherData () {
         displayWeatherData();
     })
     .catch((e) => {
-        alert(`The place you've searching for doesn't exist`);
+        alert(`The place you're searching for doesn't exist`);
     });
 };
 
