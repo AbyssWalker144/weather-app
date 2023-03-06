@@ -54,7 +54,7 @@ units.click((e) => {
 cityInput
     .on('keypress', (e) => {
         if(cityName === cityInput.val()){
-            alert("You're trying to search for weather at the same location");
+            alert(`You're trying to search for weather at the same location "${cityName}"`);
             return
         };
         console.log(cityName);
