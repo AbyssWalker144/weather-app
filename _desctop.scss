@@ -81,8 +81,7 @@
         padding: 0 0 0 60px;
         border-bottom: 2px solid white;
 
-        &:after{
-            content: "";
+        .search-icon{
             display: block;
             width: 50px;
             height: 50px;
@@ -94,6 +93,20 @@
             margin: 3px 0 0 -60px;
             cursor: pointer;
         }
+
+        // &:after{
+        //     content: "";
+        //     display: block;
+        //     width: 50px;
+        //     height: 50px;
+        //     background-image: url("src/img/search.png");
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: 80%;
+        //     position: absolute;
+        //     margin: 3px 0 0 -60px;
+        //     cursor: pointer;
+        // }
 
         .city{
             font-size: 80px;

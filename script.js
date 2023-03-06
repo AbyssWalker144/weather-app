@@ -12,6 +12,7 @@ const humidity = $('.humidity').children('p');
 const forecast = $('.forecast');
 const cityInput = $('.city');
 const units = $('.units');
+const searchIcon = $('.search-icon');
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -52,6 +53,9 @@ units.click((e) => {
 
 cityInput
     .on('keypress', (e) => {
+        if(cityName === cityInput.val()){
+            return
+        };
         console.log(cityName);
         units.checked = false;
         console.log(units.checked);
@@ -59,7 +63,7 @@ cityInput
         if(e.key === 'Enter'){
             console.log(e.target.value);
             cityName = e.target.value;
-            cleartData();
+            clearData();
             getWeatherData();
         }
         console.log(cityName);
@@ -69,12 +73,24 @@ cityInput
         if (e.offsetX > cityInput.offsetWidth) {
             console.log(e.target.value);
             cityName = e.target.value;
-            cleartData();
+            clearData();
             getWeatherData();
         }
     });
 
-function cleartData(){
+searchIcon.click( () => {
+    if(cityName === cityInput.val()){
+        return
+    };
+    cityName = cityInput.val();
+
+    console.log(cityInput.val());
+    console.log(cityInput);
+    clearData();
+    getWeatherData();
+});
+
+function clearData(){
     dataTemp = [];
     dataTime = [];
     dataPress = [];
@@ -104,11 +120,6 @@ function getWeatherData () {
             dataDay.push(window.moment(item.dt*1000).format('dddd'));
             dataTime.push(item.dt);
         }
-
-        // for (let i=0; i<8 ; i++){
-        //     hoursTemperature[i] = `${dataTemp[i]}`;
-        //     hoursTime[i] = `${moment(data2.list[i].dt*1000).format('HH:mm')}`;
-        // }
 
         console.log(hoursTemperature);
         console.log(hoursTime);
