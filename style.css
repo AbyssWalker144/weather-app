@@ -206,16 +206,17 @@
     text-align: center;
   }
   .today__img {
-    max-height: 70px;
-    position: relative;
-    margin-top: 40px;
+    height: 70px;
+    position: absolute;
     transform: translateX(-45%);
   }
   .today__details {
     width: 100%;
-    margin-top: 20px;
     gap: 80px;
     font-size: 12px;
+    position: relative;
+    top: 10px;
+    margin: 0;
   }
   .today__details p {
     margin-top: -8px;
@@ -234,8 +235,8 @@
   .today__weather .temp {
     font-size: 70px;
     font-weight: 700;
-    margin-left: -190px;
-    margin-top: -10px;
+    margin-left: -210px;
+    margin-top: -30px;
   }
   .today__weather .temp span {
     font-weight: 400;
