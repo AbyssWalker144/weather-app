@@ -71,15 +71,6 @@ cityInput
             getWeatherData();
         }
         console.log(cityName);
-    })
-    .on('click', (e) => {
-        console.log('hi');
-        if (e.offsetX > cityInput.offsetWidth) {
-            console.log(e.target.value);
-            cityName = e.target.value;
-            clearData();
-            getWeatherData();
-        }
     });
 
 searchIcon.click( () => {

@@ -206,8 +206,8 @@
     text-align: center;
   }
   .today__img {
-    height: 70px;
-    margin-top: -10px;
+    height: 60px;
+    margin-top: 8px;
     transform: translateX(-50%);
   }
   .today__details {
@@ -293,7 +293,7 @@
   .additional-info .chart {
     margin-top: 50px;
     width: 100%;
-    min-height: 200px;
+    min-height: 180px;
   }
   .additional-info .forecast {
     margin-top: 16px;
