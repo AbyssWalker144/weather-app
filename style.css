@@ -207,7 +207,7 @@
   }
   .today__img {
     height: 70px;
-    position: absolute;
+    margin-top: -10px;
     transform: translateX(-50%);
   }
   .today__details {
