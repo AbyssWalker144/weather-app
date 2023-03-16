@@ -53,15 +53,18 @@ units.click((e) => {
 
 cityInput
     .on('keypress', (e) => {
-        if(cityName === cityInput.val()){
-            alert(`You're trying to search for weather at the same location "${cityName}"`);
-            return
-        };
+        
         console.log(cityName);
         units.checked = false;
         console.log(units.checked);
 
         if(e.key === 'Enter'){
+
+            if(cityName === cityInput.val()){
+                alert(`You're trying to search for weather at the same location "${cityName}"`);
+                return
+            };
+
             console.log(e.target.value);
             cityName = e.target.value;
             clearData();
