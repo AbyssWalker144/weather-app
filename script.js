@@ -34,7 +34,6 @@ let dataCond = [];
 let dataDay = [];
 
 getWeatherData();
-// updateChartData();
 
 units.click((e) => {
     console.log(e.target.checked);
@@ -51,13 +50,15 @@ units.click((e) => {
     displayWeatherData();
 });
 
+
 cityInput
     .on('keypress', (e) => {
         
-        console.log(cityName);
-        units.checked = false;
-        console.log(units.checked);
-
+        // console.log(cityName);
+        // units.checked = false;
+        // units.attr("checked", "");
+        // console.log(units.checked);
+        
         if(e.key === 'Enter'){
 
             if(cityName === cityInput.val()){
@@ -67,8 +68,10 @@ cityInput
 
             console.log(e.target.value);
             cityName = e.target.value;
-            clearData();
+
+            clearData();            
             getWeatherData();
+            // units.click();
         }
         console.log(cityName);
     });
@@ -117,12 +120,20 @@ function getWeatherData () {
             dataTime.push(item.dt);
         }
 
+        if(units.prop('checked')) {
+            dataTemp.map( (item, index) => {
+                dataTemp[index] = Math.round(item* 1.8 + 32);
+            });
+        };
+
+        console.log(units.prop('checked'));
+
         console.log(hoursTemperature);
         console.log(hoursTime);
 
         displayWeatherData();
     })
-    .catch((e) => {
+    .catch(() => {
         alert(`The place you're searching for doesn't exist`);
     });
 };
