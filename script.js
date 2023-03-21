@@ -1,6 +1,3 @@
-// import { updateChartData } from "./chart.js";
-
-
 const API_KEY = '6e01dacfa1ae7c17d7d7ca01644c735a';
 
 const temperature = $('.temp');
@@ -36,6 +33,7 @@ let dataDay = [];
 getWeatherData();
 
 units.click((e) => {
+
     console.log(e.target.checked);
     if(e.target.checked) {
         dataTemp.map( (item, index) => {
@@ -46,18 +44,12 @@ units.click((e) => {
             dataTemp[index] = Math.round((item - 32)/1.8);
         });
     }
-    // console.log(dataTemp);
     displayWeatherData();
+
 });
 
 
-cityInput
-    .on('keypress', (e) => {
-        
-        // console.log(cityName);
-        // units.checked = false;
-        // units.attr("checked", "");
-        // console.log(units.checked);
+cityInput.on('keypress', (e) => {
         
         if(e.key === 'Enter'){
 
@@ -71,12 +63,14 @@ cityInput
 
             clearData();            
             getWeatherData();
-            // units.click();
+
         }
         console.log(cityName);
-    });
+
+});
 
 searchIcon.click( () => {
+
     if(cityName === cityInput.val()){
         alert("You're trying to search for weather at the same location");
         return
@@ -87,6 +81,7 @@ searchIcon.click( () => {
     console.log(cityInput);
     clearData();
     getWeatherData();
+    
 });
 
 function clearData(){
